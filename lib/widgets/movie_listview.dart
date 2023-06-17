@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proto_movie_app/model/movie.dart';
+import 'package:proto_movie_app/screens/movie_detail_screen.dart';
 import 'movie_item.dart';
 
 class MovieListView extends StatelessWidget {
@@ -16,7 +17,12 @@ final List<Movie> movieList;
                     itemBuilder: (BuildContext context, int index) {
                       return Padding(
                         padding: const EdgeInsets.only(left: 5, right: 5),
-                        child: MovieItem(name: movieList[index].name ,img: movieList[index].image,rating: movieList[index].rating,voteAmount: movieList[index].mention),
+                        child: GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          onTap: () {
+                            (Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MovieDetailScreen())));
+                          },
+                          child: MovieItem(name: movieList[index].name ,img: movieList[index].image,rating: movieList[index].rating,voteAmount: movieList[index].mention)),
                       );
                     }
                   ),

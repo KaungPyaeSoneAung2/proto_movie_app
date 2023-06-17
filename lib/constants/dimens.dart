@@ -8,6 +8,9 @@ const double kIconSizeBig =30;
 const double kCircleAvatarRadius = 30;
 const double kCurvyBorderRadius = 30;
 
+const double kActorListTileHeight= 50;
+const double kActorListTileWidth= 200;
+
 const double kSmallFontSize = 16;
 const double kMidFontSize = 18;
 const double kBigFontSize = 22;

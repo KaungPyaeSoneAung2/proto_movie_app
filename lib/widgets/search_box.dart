@@ -13,6 +13,7 @@ class SearchBox extends StatelessWidget {
         decoration: InputDecoration(
           hintText: "Search Movies...",
           hintStyle: const TextStyle(color: kTextGrey),
+          enabled: false,
           contentPadding: const EdgeInsets.only(top: kMidPadding, bottom: kMidPadding, left: kMidPadding),
           border: UnderlineInputBorder(
             borderRadius: BorderRadius.circular(20)

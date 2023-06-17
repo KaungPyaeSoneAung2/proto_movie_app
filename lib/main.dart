@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proto_movie_app/item_view.dart';
+import 'package:proto_movie_app/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.transparent),
         useMaterial3: true,
       ),
-      home: const ItemView(),
+      home: const HomeScreen()
     );
   }
 }

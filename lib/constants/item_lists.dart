@@ -1,18 +1,16 @@
+import 'package:proto_movie_app/model/actor_detail.dart';
 import 'package:proto_movie_app/model/movie.dart';
 
 const place_holder = "assets/images/place_holder.jpg";
-const List<String> carouselImageList = [
-  "https://i.pinimg.com/originals/9c/41/28/9c41281db67f158a17ec8646e073de95.jpg",
-    "https://m.media-amazon.com/images/M/MV5BMDI3ZDY4MDgtN2U2OS00Y2YzLWJmZmYtZWMzOTM3YWFjYmUyXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
-  "https://i.pinimg.com/originals/9c/41/28/9c41281db67f158a17ec8646e073de95.jpg"
-];
 
 const List<String> categoryList =[
 "Adventure", "Fantasy", "Animation", "Drama", "Horror", "Family"
 ];
 
-const List<String> actorList = [
-  "Naruto", "Goku", "Chi Chi"
+List<ActorDetail> actorList = [
+  ActorDetail("Jason Statham", place_holder),
+  ActorDetail("Al Pacino", place_holder),
+  ActorDetail("Donnie Yen", place_holder)
 ];
  List<Movie> movieList =[
   Movie("Naruto", 9, 1212, "https://i.pinimg.com/originals/7a/09/64/7a096487a3c52c3010b95a00ea56dd1a.jpg"),
