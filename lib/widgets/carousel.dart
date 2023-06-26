@@ -7,29 +7,35 @@ import 'package:proto_movie_app/widgets/play_button.dart';
 
 class Carousel extends StatelessWidget {
   const Carousel(
-      {super.key, required this.movieList, required this.playButtonPresent});
+      {super.key, required this.movieList, required this.playButtonPresent, required this.gotoScreen});
   final bool playButtonPresent;
   final List<Movie> movieList;
+  final gotoScreen;
   @override
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
         itemCount: movieList.length,
         itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
-            Stack(
-              children: [
-                CachedNetImageWGradient(imageUrl: movieList[itemIndex].image),
-                (playButtonPresent)
-                    ? const Center(child: PlayButton())
-                    : Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text(
-                        movieList[itemIndex].name,
-                        style: const TextStyle(
-                            fontSize: kBigFontSize,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ))
-              ],
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => gotoScreen()));
+              },
+              child: Stack(
+                children: [
+                  CachedNetImageWGradient(imageUrl: movieList[itemIndex].image),
+                  (playButtonPresent)
+                      ? const Center(child: PlayButton())
+                      : Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Text(
+                          movieList[itemIndex].name,
+                          style: const TextStyle(
+                              fontSize: kBigFontSize,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ))
+                ],
+              ),
             ),
         options: CarouselOptions(
           height: kCarouselHeight,
