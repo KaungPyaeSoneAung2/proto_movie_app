@@ -6,9 +6,7 @@ import 'package:proto_movie_app/widgets/actor_list_view.dart';
 import 'package:proto_movie_app/widgets/movie_detail_text.dart';
 import 'package:proto_movie_app/widgets/movie_listview.dart';
 import 'package:proto_movie_app/widgets/production_list_view.dart';
-import 'package:proto_movie_app/widgets/search_box.dart';
 
-import '../widgets/actor_list_tile.dart';
 
 class MovieDetailScreen extends StatelessWidget {
   const MovieDetailScreen({super.key});
@@ -24,7 +22,7 @@ class MovieDetailScreen extends StatelessWidget {
                   title: const Text("Hello"),
                   expandedHeight: 500,
                   flexibleSpace: FlexibleSpaceBar(
-                      title: Text(
+                      title: const Text(
                         "Hello",
                       ),
                       centerTitle: true,
@@ -36,7 +34,7 @@ class MovieDetailScreen extends StatelessWidget {
               ]),
           body:  SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.all(kSmallPadding),
+              padding: const EdgeInsets.all(kSmallPadding),
               child: Wrap(
                 crossAxisAlignment: WrapCrossAlignment.start,
                 runSpacing: kWarpSpacing,

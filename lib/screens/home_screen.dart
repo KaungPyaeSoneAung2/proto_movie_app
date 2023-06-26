@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:proto_movie_app/constants/dimens.dart';
 import 'package:proto_movie_app/constants/item_lists.dart';
+import 'package:proto_movie_app/screens/actor_detail_screen.dart';
+import 'package:proto_movie_app/screens/movie_detail_screen.dart';
 import 'package:proto_movie_app/widgets/carousel.dart';
 import 'package:proto_movie_app/widgets/category_listview.dart';
 import 'package:proto_movie_app/widgets/movie_listview.dart';
@@ -31,12 +33,12 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               const CategoryListView(),
-              Carousel(movieList: movieList,playButtonPresent: true),
+              Carousel(movieList: movieList,playButtonPresent: true, gotoScreen: const MovieDetailScreen(),),
               const Text("You May Like", style: TextStyle(fontSize: kBigFontSize, color: Colors.white, fontWeight: FontWeight.bold),),
               MovieListView( movieList: movieList),
               const Text("Popular", style: TextStyle(fontSize: kBigFontSize, color: Colors.white, fontWeight: FontWeight.bold),),
               MovieListView( movieList: movieList),
-              Carousel(movieList: movieList, playButtonPresent: false, )
+              Carousel(movieList: movieList, playButtonPresent: false, gotoScreen: const ActorDetailScreen(), )
               ]
           ),
       ),
